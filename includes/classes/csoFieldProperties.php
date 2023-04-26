@@ -225,9 +225,9 @@ class csoFieldProperties {
 				'menu_title'  => get_post_meta( $post->ID, 'cso_menu_title', true ),
 				'save_button' => get_post_meta( $post->ID, 'cso_save_btn_label', true ),
 				'groups'      => [
-					'group_1' => [
+					'def' => [
 						'sections' => [
-							'section_1' => [
+							'def' => [
 								'title'  => '',
 								'fields' => $properties,
 							],//Can add other sections here
