@@ -1,0 +1,122 @@
+/** Colors */
+$cl_main_blue: #2271b1;
+$cl_border_grey: #c3c4c7;
+$cl_bg_grey: #f6f7f7;
+
+
+.fields-container {
+  width: 100%;
+
+  .single-field {
+    border: 1px solid $cl_border_grey;
+    width: auto !important;
+    margin-bottom: 0.5em;
+
+    .field-header {
+      height: 1.55em;
+      display: flex;
+      flex-direction: row;
+      background-color: #2271b1;
+      color: #fff;
+      font-weight: bold;
+      padding: 0.25em 1em;
+
+      .title {
+        padding-top: 3px;
+      }
+
+      .manage {
+        margin-left: auto;
+
+        img {
+          width: 16px;
+          height: auto;
+          margin-top: 4px;
+          margin-right: 4px;
+          cursor: pointer;
+
+          &.open-field {
+            filter: invert(87%) sepia(55%) saturate(0%) hue-rotate(326deg) brightness(111%) contrast(103%);
+          }
+        }
+      }
+    }
+
+    .field-body {
+      overflow: hidden;
+      margin-top: 0.5em;
+      padding: 0.5em;
+
+      .single-property {
+        &.invisible {
+          display: none;
+        }
+
+        label {
+          font-style: italic;
+
+          textarea, select {
+            width: 100%;
+          }
+
+          .property-field {
+            font-style: normal;
+
+            &[type=text], &[type=email], &[type=password] {
+              width: 100%;
+            }
+          }
+        }
+
+
+      }
+    }
+
+    &.collapsed {
+      .field-header {
+        background-color: #f0f0f1;
+        color: #2c3338;
+
+        .manage {
+          .open-field {
+            -webkit-transform: rotate(180deg); /* Chrome and other webkit browsers */
+            -moz-transform: rotate(180deg); /* FF */
+            -o-transform: rotate(180deg); /* Opera */
+            -ms-transform: rotate(180deg); /* IE9 */
+            transform: rotate(180deg); /* W3C compliant browsers */
+
+            filter: unset;
+          }
+        }
+      }
+
+      .field-body {
+        display: none;
+      }
+    }
+  }
+
+  .add-field-btn {
+    border: 2px solid $cl_main_blue;
+    color: $cl_main_blue;
+    font-size: 24px;
+    line-height: 1em;
+    text-align: center;
+    border-radius: 5px;
+    padding: 0.25em;
+    background-color: $cl_bg_grey;
+    cursor: pointer;
+
+    &:hover {
+      background: #f0f0f1;
+      border-color: #0a4b78;
+      color: #0a4b78;
+    }
+
+    img {
+      width: 24px;
+      height: auto;
+      margin-top: 4px;
+    }
+  }
+}

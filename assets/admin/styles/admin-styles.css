@@ -1,0 +1,92 @@
+/** Colors */
+.fields-container {
+  width: 100%;
+}
+.fields-container .single-field {
+  border: 1px solid #c3c4c7;
+  width: auto !important;
+  margin-bottom: 0.5em;
+}
+.fields-container .single-field .field-header {
+  height: 1.55em;
+  display: flex;
+  flex-direction: row;
+  background-color: #2271b1;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.25em 1em;
+}
+.fields-container .single-field .field-header .title {
+  padding-top: 3px;
+}
+.fields-container .single-field .field-header .manage {
+  margin-left: auto;
+}
+.fields-container .single-field .field-header .manage img {
+  width: 16px;
+  height: auto;
+  margin-top: 4px;
+  margin-right: 4px;
+  cursor: pointer;
+}
+.fields-container .single-field .field-header .manage img.open-field {
+  filter: invert(87%) sepia(55%) saturate(0%) hue-rotate(326deg) brightness(111%) contrast(103%);
+}
+.fields-container .single-field .field-body {
+  overflow: hidden;
+  margin-top: 0.5em;
+  padding: 0.5em;
+}
+.fields-container .single-field .field-body .single-property.invisible {
+  display: none;
+}
+.fields-container .single-field .field-body .single-property label {
+  font-style: italic;
+}
+.fields-container .single-field .field-body .single-property label textarea, .fields-container .single-field .field-body .single-property label select {
+  width: 100%;
+}
+.fields-container .single-field .field-body .single-property label .property-field {
+  font-style: normal;
+}
+.fields-container .single-field .field-body .single-property label .property-field[type=text], .fields-container .single-field .field-body .single-property label .property-field[type=email], .fields-container .single-field .field-body .single-property label .property-field[type=password] {
+  width: 100%;
+}
+.fields-container .single-field.collapsed .field-header {
+  background-color: #f0f0f1;
+  color: #2c3338;
+}
+.fields-container .single-field.collapsed .field-header .manage .open-field {
+  -webkit-transform: rotate(180deg); /* Chrome and other webkit browsers */
+  -moz-transform: rotate(180deg); /* FF */
+  -o-transform: rotate(180deg); /* Opera */
+  -ms-transform: rotate(180deg); /* IE9 */
+  transform: rotate(180deg); /* W3C compliant browsers */
+  filter: unset;
+}
+.fields-container .single-field.collapsed .field-body {
+  display: none;
+}
+.fields-container .add-field-btn {
+  border: 2px solid #2271b1;
+  color: #2271b1;
+  font-size: 24px;
+  line-height: 1em;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0.25em;
+  background-color: #f6f7f7;
+  cursor: pointer;
+}
+.fields-container .add-field-btn:hover {
+  background: #f0f0f1;
+  border-color: #0a4b78;
+  color: #0a4b78;
+}
+.fields-container .add-field-btn img {
+  width: 24px;
+  height: auto;
+  margin-top: 4px;
+}
+
+/*# sourceMappingURL=admin-styles.css.map */
