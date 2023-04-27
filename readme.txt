@@ -40,6 +40,16 @@ Add New.
 * Upload the custom-site-options directory to the /wp-content/plugins/ directory
 * Activate the plugin in the Plugin dashboard
 
+= AFTER INSTALLATION =
+* Go to the Custom Site Options section of the Dashboard of your site. Here you can see the list of options pages, that you created.
+* Press the button Add Options record to create a new options page
+* On the new page fill in necessary fields, such as the title of your options page, label for Save button, and others.
+* Press the button with "+" to add a new field to your settings page.
+* Fill in the properties of the field
+* If needed add other fields
+* Save the edits. After this, you will see your options page in the Settings section of your site's Dashboard.
+
+
 == Frequently Asked Questions ==
 
 = A question that someone might have =
@@ -52,13 +62,13 @@ Answer to foo bar dilemma.
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Screenshots are stored in the /assets directory.
-2. This is the second screen shot
+1. Screenshot of page where a user can edit an option page's fields and properties.
+2. Example of created page with site's options.
 
 == Changelog ==
 
 = 0.0.1 =
-* The firs public version of the plugin
+* The first public version of the plugin
 
 == Upgrade Notice ==
 
