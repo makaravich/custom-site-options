@@ -1,10 +1,2 @@
-# Wordpress - ignore core, configuration, examples, uploads and logs.
-/wp-content/index.php
-/wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/themes/index.php
-/wp-includes/
-/index.php
-
 /includes/classes/third-party/wptOptions/*
 !/includes/classes/third-party/wptOptions/wptSettings.php
