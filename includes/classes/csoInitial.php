@@ -24,6 +24,8 @@ class csoInitial {
 			wp_enqueue_style( 'admin-custom-style', CSO_PLUGIN_URL . '/assets/admin/styles/admin-styles.css' );
 		}
 
+		wp_enqueue_style( 'admin-options', CSO_PLUGIN_URL . '/assets/admin/styles/options-page.css' );
+
 	}
 
 	public function run_users_options(): void {
@@ -36,7 +38,7 @@ class csoInitial {
 
 
 		foreach ( $options_posts as $options_post ) {
-			$settings = new wptSettings( $fields->get_fields_structure_from_post( $options_post->ID ) );
+			new wptSettings( $fields->get_fields_structure_from_post( $options_post->ID ) );
 		}
 	}
 

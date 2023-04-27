@@ -1,0 +1,10 @@
+.cso-input,
+.cso-textarea {
+  width: 100%;
+}
+
+.cso-textarea {
+  min-height: 100px;
+}
+
+/*# sourceMappingURL=options-page.css.map */

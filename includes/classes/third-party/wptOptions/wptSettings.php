@@ -154,7 +154,7 @@ class wptSettings {
 
 		$val = $this->get_option( $args['long_id'] );
 		?>
-		<input class="<?php echo $this->model['id'] ?>" type="text"
+		<input class="<?php echo $this->model['id'] ?>  cso-input" type="text"
 		       name="<?php echo $this->model['id'] ?>[<?php echo $args['long_id'] ?>]"
 		       value="<?php echo esc_attr( $val ) ?>"/>
 		<?php
@@ -170,7 +170,7 @@ class wptSettings {
 		$val        = $this->get_option( $args['long_id'] );
 		$attributes = $args['attributes'] ?? '';
 		?>
-		<textarea class="<?php echo $this->model['id'] ?>-input" type="text" <?php echo $attributes ?>
+		<textarea class="<?php echo $this->model['id'] ?>-input cso-textarea" type="text" <?php echo $attributes ?>
                   name="<?php echo $this->model['id'] ?>[<?php echo $args['long_id'] ?>]"><?php echo esc_attr( $val ) ?></textarea>
 		<?php
 	}
@@ -202,6 +202,40 @@ class wptSettings {
 
 		wp_editor( $val, wp_unique_id( $this->model['id'] ), $params );
 
+	}
+
+	/**
+	 * Renders radio group field
+	 *
+	 * @param $args
+	 *
+	 * @return void
+	 */
+	private function fill_radio( $args ): void {
+		$val        = $this->get_option( $args['long_id'] );
+		$attributes = $args['attributes'] ?? '';
+		$options    = $args['options'] ?? [];
+
+		?>
+		<fieldset>
+			<legend>Select one item:</legend>
+			<?php
+			foreach ( $options as $key => $option ) {
+				$checked = $key == $val ? ' checked="checked" ' : '';
+				$id      = 'radio_item_' . wp_unique_id();
+				?>
+				<div>
+					<input type="radio" name="<?php echo $this->model['id'] ?>[<?php echo $args['long_id'] ?>]"
+					       id="<?php echo $id ?>" <?php echo $attributes ?>
+					       value="<?php echo $key ?>"
+						<?php echo $checked ?>>
+					<label for="<?php echo $id ?>"><?php echo $option ?></label>
+				</div>
+				<?php
+			}
+			?>
+		</fieldset>
+		<?php
 	}
 
 	/**

@@ -1,7 +1,7 @@
 <?php
 
-require_once wp_normalize_path(  'third-party/class.Kama_Post_Meta_Box.php' );
-require_once wp_normalize_path(  'csoFieldProperties.php' );
+require_once wp_normalize_path( 'third-party/class.Kama_Post_Meta_Box.php' );
+require_once wp_normalize_path( 'csoFieldProperties.php' );
 
 class csoCustomFields extends Kama_Post_Meta_Box_Fields {
 
@@ -70,6 +70,7 @@ class_exists( 'Kama_Post_Meta_Box' ) && new Kama_Post_Meta_Box(
 		'id'        => 'cso',
 		'post_type' => 'custom_options',
 		'title'     => 'Option fields',
+		'priority'  => 'high',
 		'fields'    => [
 			'menu_title'       => [
 				'type'  => 'text',

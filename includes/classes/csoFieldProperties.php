@@ -28,6 +28,7 @@ class csoFieldProperties {
 				'textarea'  => 'Text area',
 				'wp_editor' => 'Rich edit',
 				'checkbox'  => 'Checkbox',
+				'radio'     => 'Radio buttons',
 				'select'    => 'Select',
 				'email'     => 'Email',
 				'password'  => 'Password',
@@ -38,6 +39,12 @@ class csoFieldProperties {
 			'id'        => 'select_options',
 			'title'     => 'Options. One per line. Values separated by colon',
 			'condition' => [ 'type', '=', 'select' ],
+		],
+		[
+			'type'      => 'textarea',
+			'id'        => 'radio_items',
+			'title'     => 'Radio buttons. One per line. Values separated by colon',
+			'condition' => [ 'type', '=', 'radio' ],
 		],
 		[
 			'type'      => 'checkbox',
@@ -209,7 +216,7 @@ class csoFieldProperties {
 				foreach ( $field as $key => $prop ) {
 					if ( $key != 'slug' && ! empty( $prop ) ) {
 
-						if ( $key == 'select_options' ) {
+						if ( $key == 'select_options' ||  $key == 'radio_items'   ) {
 							$property['options'] = $this->prepare_options( $prop );
 						} else {
 							$property[ $key ] = $prop;
