@@ -52,13 +52,29 @@ Add New.
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= Which types of fields can I add on the created options page using this plugin? =
 
-An answer to that question.
+So far you can use the following types of fields:
+* Text,
+* Text area,
+* Rich edit,
+* Checkbox,
+* Radio buttons,
+* Select,
+* Email,
+* Password.
 
-= What about foo bar? =
+Other types will be added soon.
 
-Answer to foo bar dilemma.
+= How can I use values of saved fields? =
+
+Use this snippet to get value of the field, called 'general-site-settings' for options page with slug 'main-font-size'
+`<?php
+ 	$my_options = get_option( 'general-site-settings' );
+ 	echo $my_options['def_def_main-font-size'] ;
+ ?>`
+
+def_def_ - it's a prefix, which means default tab and default section of the settings. These features are not implemented yet.
 
 == Screenshots ==
 
