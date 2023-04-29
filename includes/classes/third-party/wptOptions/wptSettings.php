@@ -124,6 +124,7 @@ class wptSettings {
 							'type'       => $field['type'] ?? 'text',
 							'attributes' => $field['attributes'] ?? null,
 							'options'    => $field['options'] ?? [],
+							'desc'       => $field['desc'] ?? '',
 						]
 					);
 
@@ -142,7 +143,23 @@ class wptSettings {
 
 		if ( is_callable( [ $this, $type_func ] ) ) {
 			call_user_func( [ $this, $type_func ], $args );
+			$this->render_description( $args['desc'] );
 		}
+	}
+
+	/**
+	 * Outputs the field description
+	 *
+	 * @param $description
+	 *
+	 * @return void
+	 */
+	private function render_description( $description ): void {
+		if ( $description ):
+			?>
+			<p class="description"> <?php echo $description ?> </p>
+		<?php
+		endif;
 	}
 
 	/**

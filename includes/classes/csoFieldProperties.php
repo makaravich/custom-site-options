@@ -16,6 +16,11 @@ class csoFieldProperties {
 		],
 		[
 			'type'  => 'text',
+			'id'    => 'desc',
+			'title' => 'Field description',
+		],
+		[
+			'type'  => 'text',
 			'id'    => 'slug',
 			'title' => 'Slug',
 		],
@@ -216,7 +221,7 @@ class csoFieldProperties {
 				foreach ( $field as $key => $prop ) {
 					if ( $key != 'slug' && ! empty( $prop ) ) {
 
-						if ( $key == 'select_options' ||  $key == 'radio_items'   ) {
+						if ( $key == 'select_options' || $key == 'radio_items' ) {
 							$property['options'] = $this->prepare_options( $prop );
 						} else {
 							$property[ $key ] = $prop;
