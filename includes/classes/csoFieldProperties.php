@@ -171,7 +171,7 @@ class csoFieldProperties {
 					<img src="<?php echo CSO_PLUGIN_URL . '/assets/img/square-delete.svg' ?>" alt="x"
 					     onclick="deletePropertyItem(this)">
 					<img class="open-field"
-					     src="<?php echo CSO_PLUGIN_URL . '/assets/img/circle-arrow-up.svg' ?>" alt="x"
+					     src="<?php echo CSO_PLUGIN_URL . '/assets/img/circle-arrow-up.svg' ?>" alt="^"
 					     onclick="openCloseProperty(this)">
 				</div>
 
