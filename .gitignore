@@ -1,2 +1,2 @@
-/includes/classes/third-party/wptOptions/*
-!/includes/classes/third-party/wptOptions/wptSettings.php
+/includes/classes/third-party/CSOPT_Options/*
+!/includes/classes/third-party/CSOPT_Options/CSOPT_Core.php

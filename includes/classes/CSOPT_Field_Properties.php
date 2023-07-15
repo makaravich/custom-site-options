@@ -1,6 +1,6 @@
 <?php
 
-class csoFieldProperties {
+class CSOPT_Field_Properties {
 
 	/**
 	 * Contains structure of the field properties
@@ -168,11 +168,11 @@ class csoFieldProperties {
 			<div class="field-header">
 				<div class="title"><?php echo $values['title'] ?? '' ?></div>
 				<div class="manage">
-					<img src="<?php echo CSO_PLUGIN_URL . '/assets/img/square-delete.svg' ?>" alt="x"
-					     onclick="deletePropertyItem(this)">
+					<img src="<?php echo CSOPT_PLUGIN_URL . '/assets/img/square-delete.svg' ?>" alt="x"
+                         onclick="deletePropertyItem(this)">
 					<img class="open-field"
-					     src="<?php echo CSO_PLUGIN_URL . '/assets/img/circle-arrow-up.svg' ?>" alt="^"
-					     onclick="openCloseProperty(this)">
+                         src="<?php echo CSOPT_PLUGIN_URL . '/assets/img/circle-arrow-up.svg' ?>" alt="^"
+                         onclick="openCloseProperty(this)">
 				</div>
 
 			</div>

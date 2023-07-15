@@ -1,12 +1,12 @@
 <?php
 
-require_once 'csoFieldProperties.php';
+require_once 'CSOPT_Field_Properties.php';
 
-class csoAJAX {
+class CSOPT_Ajax {
 	public function __construct() {
 		//Add AJAX variables
 		add_action( 'wp_enqueue_scripts', [ $this, 'ajax_data' ], 20 );
-		add_action( 'admin_head', [ $this, 'ajax_admin_data' ] );
+		add_action( 'admin_head', [ $this, 'ajax_data' ] );
 
 		//New field
 		add_action( 'wp_ajax_get_default_field', [ $this, 'get_default_field' ] );
@@ -20,19 +20,6 @@ class csoAJAX {
 		$ajax_data = $this->get_ajax_data();
 		wp_localize_script( 'admin-custom-script', 'cg_general', $ajax_data );
 	}
-
-	/**
-	 * Add AJAX variables to the site code on the backend
-	 */
-	function ajax_admin_data(): void {
-		$ajax_data = json_encode( $this->get_ajax_data() );
-		?>
-		<script type="text/javascript">
-            var cg_general = <?php echo $ajax_data; ?>;
-		</script>
-		<?php
-	}
-
 
 	/**
 	 * Contains data to transfer in JS
@@ -54,7 +41,7 @@ class csoAJAX {
 		$field_name = isset( $_POST['field_name'] ) ? htmlspecialchars( $_POST['field_name'] ) : '';
 		$value      = isset( $_POST['value'] ) ? htmlspecialchars( $_POST['value'] ) : '';
 
-		$fields = new csoFieldProperties();
+		$fields = new CSOPT_Field_Properties();
 
 		$fields->render_field( $field_name, $index, $value );
 
@@ -62,4 +49,4 @@ class csoAJAX {
 	}
 }
 
-new csoAJAX();
+new CSOPT_Ajax();

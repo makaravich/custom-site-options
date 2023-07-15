@@ -1036,7 +1036,7 @@ class Kama_Post_Meta_Box_Fields {
 							//}
 
 							frame = wp.media.frames.kmbframe = wp.media({
-								title   : '<?= __( 'Add Media' ) ?>',
+								title   : '<?php _e( 'Add Media' ) ?>',
 								// Library WordPress query arguments.
 								library : {
 									type       : 'image',
@@ -1044,7 +1044,7 @@ class Kama_Post_Meta_Box_Fields {
 								},
 								multiple: false,
 								button: {
-									text: '<?= __( 'Apply' ) ?>'
+									text: '<?php _e( 'Apply' ) ?>'
 								}
 							});
 
@@ -1082,14 +1082,14 @@ class Kama_Post_Meta_Box_Fields {
 
 		ob_start();
 		?>
-		<span class="kmb_img_wrap" data-usetype="<?= esc_attr($usetype) ?>" style="display:flex; align-items:center;">
-			<img src="<?= esc_url($src) ?>" style="max-height:100px; max-width:100px; margin-right:1em;" alt="">
+		<span class="kmb_img_wrap" data-usetype="<?php echo esc_attr($usetype) ?>" style="display:flex; align-items:center;">
+			<img src="<?php echo esc_url($src) ?>" style="max-height:100px; max-width:100px; margin-right:1em;" alt="">
 			<span>
-				<input class="set_img button button-small" type="button" data-post_id="<?= $post->ID ?>" value="<?= __( 'Images' ) . ' class.Kama_Post_Meta_Box.php' . __( 'Post' ) ?>" />
-				<input class="set_img button button-small" type="button" value="<?= __('Set image') ?>" />
-				<input class="del_img button button-small" type="button" value="<?= __('Remove')?>" />
+				<input class="set_img button button-small" type="button" data-post_id="<?php echo $post->ID ?>" value="<?php _e( 'Images' ) . ' CSOPT_Kama_Post_Meta_Box.php' . __( 'Post' ) ?>" />
+				<input class="set_img button button-small" type="button" value="<?php _e('Set image') ?>" />
+				<input class="del_img button button-small" type="button" value="<?php _e('Remove')?>" />
 
-				<input type="hidden" name="<?= $var->name ?>" value="<?= esc_attr($var->val) ?>">
+				<input type="hidden" name="<?php echo $var->name ?>" value="<?php echo esc_attr($var->val) ?>">
 			</span>
 		</span>
 		<?php

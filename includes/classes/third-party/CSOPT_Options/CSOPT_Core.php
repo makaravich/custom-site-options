@@ -13,7 +13,7 @@
  *
  */
 
-class wptSettings {
+class CSOPT_Core {
 
 	/**
 	 * @var bool
@@ -316,7 +316,7 @@ class wptSettings {
 	 *
 	 * @return mixed|null
 	 */
-	public function get_option( $option ): mixed {
+	public function get_option( $option ) {
 		$val = get_option( $this->model['id'] );
 
 		return $val[ $option ] ?? null;

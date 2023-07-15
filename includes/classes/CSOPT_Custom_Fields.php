@@ -1,9 +1,9 @@
 <?php
 
-require_once wp_normalize_path( 'third-party/class.Kama_Post_Meta_Box.php' );
-require_once wp_normalize_path( 'csoFieldProperties.php' );
+require_once wp_normalize_path( 'third-party/CSOPT_Kama_Post_Meta_Box.php' );
+require_once wp_normalize_path( 'CSOPT_Field_Properties.php' );
 
-class csoCustomFields extends Kama_Post_Meta_Box_Fields {
+class CSOPT_Custom_Fields extends Kama_Post_Meta_Box_Fields {
 
 	// create custom field `my_field`
 	public function opt_post_type( $rg, $var, $post ): string {
@@ -33,7 +33,7 @@ class csoCustomFields extends Kama_Post_Meta_Box_Fields {
 
 	public function fields_container( $rg, $var, $post ): string {
 		ob_start();
-		$fields = new csoFieldProperties();
+		$fields = new CSOPT_Field_Properties();
 		$values = $var->val;
 
 		?>
@@ -51,7 +51,7 @@ class csoCustomFields extends Kama_Post_Meta_Box_Fields {
 
 			<div class="add-field-btn" id="add-field-btn" onclick="addNewField('<?php echo $var->name ?>')"
 			     data-field-name="<?php echo $var->name ?>">
-				<img src="<?php echo CSO_PLUGIN_URL . '/assets/img/square-plus-blue.svg' ?>" alt="+">
+				<img src="<?php echo CSOPT_PLUGIN_URL . '/assets/img/square-plus-blue.svg' ?>" alt="+">
 			</div>
 		</div>
 
@@ -61,7 +61,7 @@ class csoCustomFields extends Kama_Post_Meta_Box_Fields {
 }
 
 add_action( 'kama_post_meta_box__fields_class', function () {
-	return 'csoCustomFields';
+	return 'CSOPT_Custom_Fields';
 } );
 
 

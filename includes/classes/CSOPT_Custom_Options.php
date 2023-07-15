@@ -1,7 +1,6 @@
 <?php
 
-
-class csoCPTCustomOptions {
+class CSOPT_Custom_Options {
 	public function __construct() {
 		add_action( 'init', [ $this, 'register_cpt' ] );
 	}
@@ -12,7 +11,7 @@ class csoCPTCustomOptions {
 	 * @return void
 	 */
 	public function register_cpt(): void {
-		register_post_type( CSO_POST_TYPE, [
+		register_post_type( CSOPT_POST_TYPE, [
 			'taxonomies'    => [],
 			// post related taxonomies
 			'label'         => null,
@@ -60,4 +59,4 @@ class csoCPTCustomOptions {
 
 }
 
-new csoCPTCustomOptions();
+new CSOPT_Custom_Options();
